@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixela - Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../utils/api.js" defer></script>
+    <script src="../utils/auth.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, #e00909dc, #0b0d10);
+        }
+        #logout-btn {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: auto;
+            align-self: flex-end;
+            margin: 10px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        input, select, button {
+            width: calc(100% - 20px);
+            margin: 5px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff0000;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="logout-btn">Déconnexion</button>
+
+    <div class="container">
+        <h2>Créer un Graphe</h2>
+        <form id="create-graph-form">
+            <input type="text" id="graph-id" placeholder="ID du graphe" required>
+            <input type="text" id="graph-name" placeholder="Nom du graphe" required>
+            <input type="text" id="graph-unit" placeholder="Unité" required>
+            <select id="graph-type">
+                <option value="int">Nombre entier</option>
+                <option value="float">Nombre décimal</option>
+            </select>
+            <input type="text" id="graph-color" placeholder="Couleur (shibafu, momiji...)" required>
+            <button type="submit">Créer</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Graphes existants</h2>
+        <ul id="graphs-list"></ul>
+    </div>
+</body>
+</html>
